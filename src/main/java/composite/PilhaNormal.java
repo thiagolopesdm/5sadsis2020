@@ -1,21 +1,24 @@
 package composite;
 
 public class PilhaNormal implements FornecedorDeEnergia {
-  private double energiaPilhaNormal = 0.2;
+
+  private double energia = 0.4;
+
+  @Override
+  public double cargaDisponivel() {
+    return energia;
+  }
 
   @Override
   public double fornecer() {
-    if (energiaPilhaNormal >= 0.1) {
-      energiaPilhaNormal -= 0.1;
+    if (this.cargaDisponivel() >= 0.1) {
+      energia -= 0.1;
       System.out.println("PilhaNormal fornecendo energia....");
-      return energiaPilhaNormal;
+      return this.cargaDisponivel();
     } else {
       System.out.println("A pilha nao contem energia");
       return 0;
     }
   }
 
-  public double getEnergiaPilhaNormal() {
-    return energiaPilhaNormal;
-  }
 }
