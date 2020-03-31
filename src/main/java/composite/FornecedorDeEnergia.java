@@ -1,7 +1,8 @@
 package composite;
 
 public interface FornecedorDeEnergia {
+  static double cargaDisponivel = 0.0;
 
-  void fornecer();
+  double fornecer();
 
 }
